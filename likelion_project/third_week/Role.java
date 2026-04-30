@@ -18,11 +18,10 @@ abstract class Role{
     public String getPart() { return part; }
     public String getYear() { return year; }
 
-    abstract interf getPolicy();
-    interf myPolicy = getPolicy();
+    abstract boolean getPolicy();
 
     public void printCanSubmit() {
-        if (myPolicy.submit()) {
+        if (getPolicy()) {
             System.out.println("제출 가능합니다.");
         } else {
             System.out.println("제출 불가합니다.");

@@ -6,7 +6,6 @@ public class main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // 1. 아기사자 정보 입력
         System.out.println("=== 아기사자 정보를 입력하세요 ===");
         System.out.print("이름: "); String lName = sc.next();
         System.out.print("전공: "); String lMajor = sc.next();
@@ -16,7 +15,6 @@ public class main {
 
         Role lion = new Lion(lName, lMajor, lOrdinal, lPart, lId);
 
-        // 2. 운영진 정보 입력
         System.out.println("\n=== 운영진 정보를 입력하세요 ===");
         System.out.print("이름: "); String sName = sc.next();
         System.out.print("전공: "); String sMajor = sc.next();
@@ -26,7 +24,15 @@ public class main {
 
         Role admin = new Admin(sName, sMajor, sOrdinal, sPart, sRole);
 
-        // 3. 결과 출력 (다형성 활용)
+        System.out.println("\n=== 알럼나이 정보를 입력하세요 ===");
+        System.out.print("이름: "); String aName = sc.next();
+        System.out.print("전공: "); String aMajor = sc.next();
+        System.out.print("기수(숫자): "); String aOrdinal = sc.next();
+        System.out.print("파트: "); String aPart = sc.next();
+        System.out.print("현재 직무: "); String aCurrentJob = sc.next();
+
+        Role Alumni= new Alumni(aName, aMajor, aPart, aOrdinal, aCurrentJob);
+
         System.out.println("\n==============================");
         System.out.println("입력된 정보 및 과제 제출 여부 확인");
         System.out.println("==============================");
@@ -36,7 +42,8 @@ public class main {
         System.out.println();
         System.out.println(admin.getInfo());
         admin.printCanSubmit();
-
-        sc.close();
+        System.out.println();
+        System.out.println(Alumni.getInfo());
+        Alumni.printCanSubmit();
     }
 }
